@@ -46,7 +46,7 @@ def home():
         return {"content" : "not a key"}
     
 
-    print(str)
+    print(repr(str))
 
 
     # Prepare the prompt for the model

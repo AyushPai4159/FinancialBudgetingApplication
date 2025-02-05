@@ -32,19 +32,19 @@ export default function OllamaOverview({load, data}){
 
     let newArr = data.data
 
-    // let descriptionArray = []
+    let descriptionArray = []
 
-    // for(let i = 0; i < newArr.length; i++){
-    //     try{
-    //         descriptionArray.push(newArr[i]['Description'])
-    //     } catch(error){
-    //         //pass through
-    //     }
-    // }
-    // console.log(descriptionArray)
+    for(let i = 0; i < newArr.length; i++){
+        try{
+            descriptionArray.push(newArr[i]['Description'])
+        } catch(error){
+            //pass through
+        }
+    }
+    console.log(descriptionArray)
 
 
-    // let splitArray = ollamaInfo !== null ? ollamaInfo['content'].split("\n") : []
+    let splitArray = ollamaInfo !== null ? ollamaInfo['content'].split("\n") : []
       
 
 
@@ -56,13 +56,13 @@ export default function OllamaOverview({load, data}){
         </div>
         <h1 style={{textAlign: 'center'}}>OLLAMA Overview</h1>
         <p>
-            {/* {splitArray.map(str => {
+            {splitArray.map(str => {
                 if(str === '\n'){
                     return <br></br>
                 } else{
                     return <p>{str}</p>
                 }
-            })} */}
+            })}
         </p>
     </div>) : (<div><h1>Loading...</h1></div>)
 }
